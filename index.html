@@ -139,20 +139,42 @@
   </section>
 
   <!-- 📬 CONTACT -->
-  <section class="contact" id="contact">
-    <h2 class="heading">Contact <span>Me!</span></h2>
-    <form action="https://formsubmit.co/mohammedsameeralishaik@email.com" method="POST">
-      <div class="input-box">
-        <input type="text" placeholder="Full Name" />
-        <input type="email" placeholder="Your Email" />
-      </div>
-      <div class="input-box">
-        <input type="text" placeholder="Email Subject" />
-      </div>
-      <textarea cols="30" rows="10" placeholder="Your Message"></textarea>
-      <input type="submit" value="Send Message" class="btn" />
-    </form>
-  </section>
+      <section class="contact" id="contact">
+      <h2 class="heading">Contact <span>Me!</span></h2>
+      <form
+        action="https://formsubmit.co/mohammedsameeralishaik@email.com"
+        method="POST"
+      >
+        <!-- 🛡️ Optional hidden fields -->
+        <input type="hidden" name="_captcha" value="false" />
+        <input
+          type="hidden"
+          name="_next"
+          value="https://yourdomain.com/thankyou.html"
+        />
+
+        <div class="input-box">
+          <input type="text" name="name" placeholder="Full Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+        </div>
+        <div class="input-box">
+          <input
+            type="text"
+            name="subject"
+            placeholder="Email Subject"
+            required
+          />
+        </div>
+        <textarea
+          name="message"
+          cols="30"
+          rows="10"
+          placeholder="Your Message"
+          required
+        ></textarea>
+        <input type="submit" value="Send Message" class="btn" />
+      </form>
+    </section>
 
   <!-- 🔚 FOOTER -->
   <footer class="footer">
