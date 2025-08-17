@@ -12,25 +12,12 @@ loadingManager.onLoad = () => {
     loadingScreen.style.display = 'none';
 };
 
-// Skybox
-const loader = new THREE.CubeTextureLoader(loadingManager);
-const texture = loader.load([
-    'https://raw.githubusercontent.com/DalSoft/Three.js-examples/master/images/dawnmountain-xpos.png',
-    'https://raw.githubusercontent.com/DalSoft/Three.js-examples/master/images/dawnmountain-xneg.png',
-    'https://raw.githubusercontent.com/DalSoft/Three.js-examples/master/images/dawnmountain-ypos.png',
-    'https://raw.githubusercontent.com/DalSoft/Three.js-examples/master/images/dawnmountain-yneg.png',
-    'https://raw.githubusercontent.com/DalSoft/Three.js-examples/master/images/dawnmountain-zpos.png',
-    'https://raw.githubusercontent.com/DalSoft/Three.js-examples/master/images/dawnmountain-zneg.png',
-]);
-scene.background = texture;
+// Sky
+const sky = new THREE.Sky();
+sky.scale.setScalar(450000);
+scene.add(sky);
 
-// Fog
-scene.fog = new THREE.Fog(0x081b29, 0, 75);
-
-
-// Camera
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(0, 2, 5); // Position the camera
+const sun = new THREE.Vector3();
 
 // Renderer
 const renderer = new THREE.WebGLRenderer({
@@ -39,6 +26,44 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
+
+const effectController = {
+    turbidity: 10,
+    rayleigh: 0.1,
+    mieCoefficient: 0.005,
+    mieDirectionalG: 0.7,
+    elevation: -5, // angle above the horizon
+    azimuth: 180, // Facing north
+    exposure: renderer.toneMappingExposure
+};
+
+function updateSky() {
+    const uniforms = sky.material.uniforms;
+    uniforms['turbidity'].value = effectController.turbidity;
+    uniforms['rayleigh'].value = effectController.rayleigh;
+    uniforms['mieCoefficient'].value = effectController.mieCoefficient;
+    uniforms['mieDirectionalG'].value = effectController.mieDirectionalG;
+
+    const phi = THREE.MathUtils.degToRad(90 - effectController.elevation);
+    const theta = THREE.MathUtils.degToRad(effectController.azimuth);
+
+    sun.setFromSphericalCoords(1, phi, theta);
+
+    uniforms['sunPosition'].value.copy(sun);
+
+    renderer.toneMappingExposure = effectController.exposure;
+    renderer.render(scene, camera);
+}
+
+updateSky();
+
+// Fog
+scene.fog = new THREE.Fog(0x081b29, 0, 75);
+
+
+// Camera
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.set(0, 2, 5); // Position the camera
 
 // Lighting
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft white light
