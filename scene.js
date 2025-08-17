@@ -1,6 +1,29 @@
 // Basic Three.js scene setup
 const scene = new THREE.Scene();
 
+// Loading Manager
+const loadingManager = new THREE.LoadingManager();
+const loadingScreen = document.getElementById('loading-screen');
+loadingManager.onLoad = () => {
+    loadingScreen.style.display = 'none';
+};
+
+// Skybox
+const loader = new THREE.CubeTextureLoader(loadingManager);
+const texture = loader.load([
+    'https://raw.githack.com/codypearce/some-skyboxes/master/skyboxes/purplenebula/purplenebula_ft.png',
+    'https://raw.githack.com/codypearce/some-skyboxes/master/skyboxes/purplenebula/purplenebula_bk.png',
+    'https://raw.githack.com/codypearce/some-skyboxes/master/skyboxes/purplenebula/purplenebula_up.png',
+    'https://raw.githack.com/codypearce/some-skyboxes/master/skyboxes/purplenebula/purplenebula_dn.png',
+    'https://raw.githack.com/codypearce/some-skyboxes/master/skyboxes/purplenebula/purplenebula_rt.png',
+    'https://raw.githack.com/codypearce/some-skyboxes/master/skyboxes/purplenebula/purplenebula_lf.png',
+]);
+scene.background = texture;
+
+// Fog
+scene.fog = new THREE.Fog(0x081b29, 0, 75);
+
+
 // Camera
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.set(0, 2, 5); // Position the camera
