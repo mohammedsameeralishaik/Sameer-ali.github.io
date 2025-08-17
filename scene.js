@@ -4,6 +4,10 @@ const scene = new THREE.Scene();
 // Loading Manager
 const loadingManager = new THREE.LoadingManager();
 const loadingScreen = document.getElementById('loading-screen');
+const progressBar = document.getElementById('progress-bar');
+loadingManager.onProgress = (url, itemsLoaded, itemsTotal) => {
+    progressBar.style.width = (itemsLoaded / itemsTotal) * 100 + '%';
+};
 loadingManager.onLoad = () => {
     loadingScreen.style.display = 'none';
 };
@@ -11,12 +15,12 @@ loadingManager.onLoad = () => {
 // Skybox
 const loader = new THREE.CubeTextureLoader(loadingManager);
 const texture = loader.load([
-    'https://raw.githack.com/codypearce/some-skyboxes/master/skyboxes/purplenebula/purplenebula_ft.png',
-    'https://raw.githack.com/codypearce/some-skyboxes/master/skyboxes/purplenebula/purplenebula_bk.png',
-    'https://raw.githack.com/codypearce/some-skyboxes/master/skyboxes/purplenebula/purplenebula_up.png',
-    'https://raw.githack.com/codypearce/some-skyboxes/master/skyboxes/purplenebula/purplenebula_dn.png',
-    'https://raw.githack.com/codypearce/some-skyboxes/master/skyboxes/purplenebula/purplenebula_rt.png',
-    'https://raw.githack.com/codypearce/some-skyboxes/master/skyboxes/purplenebula/purplenebula_lf.png',
+    'https://raw.githubusercontent.com/DalSoft/Three.js-examples/master/images/dawnmountain-xpos.png',
+    'https://raw.githubusercontent.com/DalSoft/Three.js-examples/master/images/dawnmountain-xneg.png',
+    'https://raw.githubusercontent.com/DalSoft/Three.js-examples/master/images/dawnmountain-ypos.png',
+    'https://raw.githubusercontent.com/DalSoft/Three.js-examples/master/images/dawnmountain-yneg.png',
+    'https://raw.githubusercontent.com/DalSoft/Three.js-examples/master/images/dawnmountain-zpos.png',
+    'https://raw.githubusercontent.com/DalSoft/Three.js-examples/master/images/dawnmountain-zneg.png',
 ]);
 scene.background = texture;
 
