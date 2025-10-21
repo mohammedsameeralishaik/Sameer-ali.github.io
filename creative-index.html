@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sameer Ali - Code Editor Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.44.0/min/vs/editor/editor.main.css">
+</head>
+<body>
+    <!-- VS Code-like Interface -->
+    <div class="vscode-window">
+        <!-- Title Bar -->
+        <div class="vscode-titlebar">
+            <div class="titlebar-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+            </div>
+            <div class="titlebar-title">Sameer Ali - Portfolio</div>
+            <div class="titlebar-menu">
+                <span>File</span>
+                <span>Edit</span>
+                <span>View</span>
+                <span>Go</span>
+                <span>Run</span>
+                <span>Terminal</span>
+                <span>Help</span>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="vscode-main">
+            <!-- Activity Bar (Left) -->
+            <div class="activity-bar">
+                <div class="activity-item active" data-view="explorer">
+                    <i class="fas fa-folder"></i>
+                </div>
+                <div class="activity-item" data-view="search">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="activity-item" data-view="git">
+                    <i class="fab fa-git-alt"></i>
+                </div>
+                <div class="activity-item" data-view="extensions">
+                    <i class="fas fa-puzzle-piece"></i>
+                </div>
+                <div class="activity-item" data-view="settings">
+                    <i class="fas fa-cog"></i>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="vscode-sidebar">
+                <!-- Explorer Panel -->
+                <div class="sidebar-panel active" id="explorer-panel">
+                    <div class="panel-header">
+                        <span>EXPLORER</span>
+                        <i class="fas fa-ellipsis-h"></i>
+                    </div>
+                    <div class="explorer-content">
+                        <div class="explorer-item folder expanded">
+                            <i class="fas fa-folder-open"></i>
+                            <span>SAMEER-ALI</span>
+                        </div>
+                        <div class="explorer-submenu">
+                            <div class="explorer-item file active" data-file="readme.md">
+                                <i class="fab fa-markdown"></i>
+                                <span>README.md</span>
+                            </div>
+                            <div class="explorer-item file" data-file="about.py">
+                                <i class="fab fa-python"></i>
+                                <span>about.py</span>
+                            </div>
+                            <div class="explorer-item file" data-file="skills.json">
+                                <i class="fas fa-code"></i>
+                                <span>skills.json</span>
+                            </div>
+                            <div class="explorer-item folder" data-folder="projects">
+                                <i class="fas fa-folder"></i>
+                                <span>projects</span>
+                            </div>
+                            <div class="explorer-item file" data-file="contact.js">
+                                <i class="fab fa-js"></i>
+                                <span>contact.js</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Panels (Hidden by default) -->
+                <div class="sidebar-panel" id="search-panel">
+                    <div class="panel-header">
+                        <span>SEARCH</span>
+                    </div>
+                    <div class="search-content">
+                        <input type="text" placeholder="Search" class="search-input">
+                    </div>
+                </div>
+
+                <div class="sidebar-panel" id="git-panel">
+                    <div class="panel-header">
+                        <span>SOURCE CONTROL</span>
+                    </div>
+                    <div class="git-content">
+                        <div class="git-status">
+                            <div class="git-item">
+                                <i class="fas fa-plus"></i>
+                                <span>50+ commits</span>
+                            </div>
+                            <div class="git-item">
+                                <i class="fas fa-code-branch"></i>
+                                <span>main</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Editor Area -->
+            <div class="vscode-editor">
+                <!-- Editor Tabs -->
+                <div class="editor-tabs">
+                    <div class="tab active" data-file="readme.md">
+                        <span>README.md</span>
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+
+                <!-- Editor Content -->
+                <div class="editor-content">
+                    <!-- README.md Content -->
+                    <div class="editor-file active" id="readme-content">
+                        <div class="code-editor">
+                            <div class="code-line">
+                                <span class="line-number">1</span>
+                                <span class="code-content">
+                                    <span class="markdown-header"># Sameer Ali - Data Scientist & Developer</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">2</span>
+                                <span class="code-content"></span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">3</span>
+                                <span class="code-content">
+                                    <span class="markdown-quote">> Transforming data into intelligent solutions</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">4</span>
+                                <span class="code-content"></span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">5</span>
+                                <span class="code-content">
+                                    <span class="markdown-header">## 🚀 Quick Start</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">6</span>
+                                <span class="code-content"></span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">7</span>
+                                <span class="code-content">
+                                    <span class="markdown-code">```python</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">8</span>
+                                <span class="code-content">
+                                    <span class="python-keyword">from</span> <span class="python-module">data_scientist</span> <span class="python-keyword">import</span> SameerAli
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">9</span>
+                                <span class="code-content"></span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">10</span>
+                                <span class="code-content">
+                                    <span class="python-comment"># Initialize portfolio</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">11</span>
+                                <span class="code-content">
+                                    <span class="python-variable">portfolio</span> = <span class="python-function">SameerAli</span>()
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">12</span>
+                                <span class="code-content">
+                                    <span class="python-variable">portfolio</span>.<span class="python-function">show_expertise</span>()
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">13</span>
+                                <span class="code-content">
+                                    <span class="markdown-code">```</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- About.py Content -->
+                    <div class="editor-file" id="about-content">
+                        <div class="code-editor">
+                            <div class="code-line">
+                                <span class="line-number">1</span>
+                                <span class="code-content">
+                                    <span class="python-keyword">class</span> <span class="python-class">DataScientist</span>:
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">2</span>
+                                <span class="code-content">
+                                    <span class="python-indent">    """Professional Data Scientist & Python Developer"""</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">3</span>
+                                <span class="code-content"></span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">4</span>
+                                <span class="code-content">
+                                    <span class="python-keyword">def</span> <span class="python-function">__init__</span>(self):
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">5</span>
+                                <span class="code-content">
+                                    <span class="python-indent">        self.name = <span class="python-string">"Sameer Ali"</span></span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">6</span>
+                                <span class="code-content">
+                                    <span class="python-indent">        self.experience = <span class="python-number">5</span>  <span class="python-comment"># years</span></span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">7</span>
+                                <span class="code-content">
+                                    <span class="python-indent">        self.projects = <span class="python-number">50</span></span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">8</span>
+                                <span class="code-content">
+                                    <span class="python-indent">        self.certifications = <span class="python-number">20</span></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills.json Content -->
+                    <div class="editor-file" id="skills-content">
+                        <div class="code-editor">
+                            <div class="code-line">
+                                <span class="line-number">1</span>
+                                <span class="code-content">
+                                    <span class="json-brace">{</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">2</span>
+                                <span class="code-content">
+                                    <span class="json-indent">    <span class="json-key">"programming"</span>: {</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">3</span>
+                                <span class="code-content">
+                                    <span class="json-indent">        <span class="json-key">"Python"</span>: <span class="json-number">95</span>,</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">4</span>
+                                <span class="code-content">
+                                    <span class="json-indent">        <span class="json-key">"SQL"</span>: <span class="json-number">90</span>,</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">5</span>
+                                <span class="code-content">
+                                    <span class="json-indent">        <span class="json-key">"Java"</span>: <span class="json-number">75</span></span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">6</span>
+                                <span class="code-content">
+                                    <span class="json-indent">    },</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">7</span>
+                                <span class="code-content">
+                                    <span class="json-indent">    <span class="json-key">"machine_learning"</span>: {</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">8</span>
+                                <span class="code-content">
+                                    <span class="json-indent">        <span class="json-key">"TensorFlow"</span>: <span class="json-number">85</span>,</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">9</span>
+                                <span class="code-content">
+                                    <span class="json-indent">        <span class="json-key">"Scikit-learn"</span>: <span class="json-number">90</span>,</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">10</span>
+                                <span class="code-content">
+                                    <span class="json-indent">        <span class="json-key">"PyTorch"</span>: <span class="json-number">80</span></span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">11</span>
+                                <span class="code-content">
+                                    <span class="json-indent">    }</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">12</span>
+                                <span class="code-content">
+                                    <span class="json-brace">}</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projects Folder Content -->
+                    <div class="editor-file" id="projects-content">
+                        <div class="code-editor">
+                            <div class="code-line">
+                                <span class="line-number">1</span>
+                                <span class="code-content">
+                                    <span class="bash-comment"># Projects Directory</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">2</span>
+                                <span class="code-content"></span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">3</span>
+                                <span class="code-content">
+                                    <span class="bash-prompt">$</span> <span class="bash-command">ls -la projects/</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">4</span>
+                                <span class="code-content"></span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">5</span>
+                                <span class="code-content">
+                                    <span class="bash-output">drwxr-xr-x  5 sameer  staff   160 Jan 15 14:30 hospital_management/</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">6</span>
+                                <span class="code-content">
+                                    <span class="bash-output">-rw-r--r--  1 sameer  staff  2456 Feb 20 09:15 customer_segmentation.ipynb</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">7</span>
+                                <span class="code-content">
+                                    <span class="bash-output">drwxr-xr-x  8 sameer  staff   256 Mar 10 16:45 predictive_maintenance/</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact.js Content -->
+                    <div class="editor-file" id="contact-content">
+                        <div class="code-editor">
+                            <div class="code-line">
+                                <span class="line-number">1</span>
+                                <span class="code-content">
+                                    <span class="js-keyword">const</span> <span class="js-variable">contact</span> = {
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">2</span>
+                                <span class="code-content">
+                                    <span class="js-indent">    email: <span class="js-string">"mohammedsameeralishaik@gmail.com"</span>,</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">3</span>
+                                <span class="code-content">
+                                    <span class="js-indent">    linkedin: <span class="js-string">"linkedin.com/in/shaik-mohammedsameerali-672a82251"</span>,</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">4</span>
+                                <span class="code-content">
+                                    <span class="js-indent">    github: <span class="js-string">"github.com/sure-trust/Sameer-G9_DS"</span>,</span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">5</span>
+                                <span class="code-content">
+                                    <span class="js-indent">    status: <span class="js-string">"Available for collaboration"</span></span>
+                                </span>
+                            </div>
+                            <div class="code-line">
+                                <span class="line-number">6</span>
+                                <span class="code-content">
+                                    <span class="js-brace">}</span>;
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status Bar -->
+            <div class="vscode-statusbar">
+                <div class="status-left">
+                    <span class="git-branch">
+                        <i class="fab fa-git-alt"></i>
+                        main
+                    </span>
+                    <span class="sync-status">
+                        <i class="fas fa-sync"></i>
+                        0 ↓ 0 ↑
+                    </span>
+                </div>
+                <div class="status-right">
+                    <span class="language">Markdown</span>
+                    <span class="encoding">UTF-8</span>
+                    <span class="line-col">Ln 1, Col 1</span>
+                    <span class="spaces">Spaces: 4</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced 3D Elements -->
+    <div class="floating-code-snippets">
+        <div class="code-snippet-3d" id="python-snippet">
+            <pre><code>def analyze_data(data):
+    insights = ml_model.predict(data)
+    return insights</code></pre>
+        </div>
+        <div class="code-snippet-3d" id="sql-snippet">
+            <pre><code>SELECT * FROM users
+WHERE experience > 5
+ORDER BY skills DESC;</code></pre>
+        </div>
+        <div class="code-snippet-3d" id="js-snippet">
+            <pre><code>const portfolio = {
+    skills: ['Python', 'ML', 'DataViz'],
+    projects: 50,
+    experience: '5+ years'
+};</code></pre>
+        </div>
+    </div>
+
+    <!-- Interactive 3D Models -->
+    <div class="interactive-3d-models">
+        <div class="model-container" id="brain-model">
+            <div class="model-3d">
+                <i class="fas fa-brain"></i>
+                <div class="model-tooltip">Machine Learning</div>
+            </div>
+        </div>
+        <div class="model-container" id="database-model">
+            <div class="model-3d">
+                <i class="fas fa-database"></i>
+                <div class="model-tooltip">Data Engineering</div>
+            </div>
+        </div>
+        <div class="model-container" id="chart-model">
+            <div class="model-3d">
+                <i class="fas fa-chart-line"></i>
+                <div class="model-tooltip">Data Visualization</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3D Canvas Background -->
+    <canvas id="bg"></canvas>
+
+    <!-- 3D Particles Canvas -->
+    <canvas id="particles-3d" class="particles-canvas"></canvas>
+
+    <!-- Scripts -->
+    <script src="lib/three/three.min.js"></script>
+    <script src="lib/three/PointerLockControls.js"></script>
+    <script src="lib/three/Sky.js"></script>
+    <script src="scene.js"></script>
+    <script src="vscode.js"></script>
+    <script src="vscode-3d.js"></script>
+</body>
+</html>

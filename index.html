@@ -1,253 +1,587 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SHAIK MOHAMMED SAMEER ALI - Portfolio</title>
-    <link rel="stylesheet" href="style.optimized.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sameer Ali - Immersive Data Science Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" role="button" tabindex="0" aria-label="Toggle dark/light mode">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span class="logo-letter">S</span>
+                <span class="logo-letter">A</span>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <p>Loading Portfolio...</p>
+        </div>
+    </div>
+
+    <!-- 3D Canvas -->
+    <canvas id="bg"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar glass-effect">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>Sameer Ali</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials" class="nav-link">Testimonials</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#blog" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger" role="button" tabindex="0" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Floating Action Button -->
+    <div class="floating-action">
+        <a href="#contact" class="fab-button" aria-label="Scroll to contact section">
+            <i class="fas fa-paper-plane"></i>
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="main-title">
+                            <span class="title-line">Data Scientist</span>
+                            <span class="title-line">& Python Developer</span>
+                        </h1>
+                        <p class="subtitle">Transforming Data into Intelligent Solutions</p>
+                        <p class="description">I build machine learning models and data-driven applications that solve complex business problems and create measurable value.</p>
+                        <div class="cta-buttons">
+                            <a href="#projects" class="btn primary">Explore My Work</a>
+                            <a href="https://docs.google.com/document/d/1LB9uSAcdDstgJWPxN1rUc18CNW2zWacH/edit?usp=sharing" class="btn secondary" target="_blank">Download CV</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="hero-cube">
+                            <div class="cube-face front">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="cube-face back">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="cube-face right">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="cube-face left">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="cube-face top">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="cube-face bottom">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                        </div>
+                        <div class="floating-icons">
+                            <i class="fas fa-code floating-icon" style="animation-delay: 0s;"></i>
+                            <i class="fas fa-chart-bar floating-icon" style="animation-delay: 1s;"></i>
+                            <i class="fas fa-database floating-icon" style="animation-delay: 2s;"></i>
+                            <i class="fas fa-brain floating-icon" style="animation-delay: 3s;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="content-wrapper">
+                    <div class="text-content glass-effect">
+                        <p>Hello! I'm Sameer Ali, a passionate Data Scientist with expertise in machine learning, statistical analysis, and data visualization. I transform complex datasets into actionable insights that drive business decisions.</p>
+                        <p>With a strong foundation in Python, SQL, and advanced analytics tools, I've successfully delivered projects ranging from predictive modeling to customer segmentation. My goal is to leverage data science to solve real-world problems and create value for organizations.</p>
+                        <div class="stats-container">
+                            <div class="stat-item">
+                                <h3>50+</h3>
+                                <p>Projects</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>5+</h3>
+                                <p>Years Experience</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>20+</h3>
+                                <p>Certifications</p>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/shaik-mohammedsameerali-672a82251/" target="_blank" class="social-icon" aria-label="LinkedIn profile">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/sure-trust/Sameer-G9_DS" target="_blank" class="social-icon" aria-label="GitHub profile">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Twitter profile">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Medium profile">
+                                <i class="fab fa-medium"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="visual-content">
+                        <div class="tech-stack">
+                            <div class="tech-item">
+                                <i class="fab fa-python"></i>
+                                <span>Python</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-database"></i>
+                                <span>SQL</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Tableau</span>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-brain"></i>
+                                <span>ML</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Technical Skills</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="skills-container">
+                    <div class="skill-category glass-effect">
+                        <h3><i class="fas fa-code"></i> Programming</h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>Python</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>SQL</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>Java</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="skill-progress">
+                                    <div class="skill-progress-bar" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category glass-effect">
+                        <h3><i class="fas fa-chart-pie"></i> Data Science Tools</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">Scikit-learn</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">Matplotlib</span>
+                            <span class="skill-tag">Seaborn</span>
+                            <span class="skill-tag">Plotly</span>
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">Tableau</span>
+                        </div>
+                    </div>
+                    <div class="skill-category glass-effect">
+                        <h3><i class="fas fa-cogs"></i> Techniques</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Predictive Modeling</span>
+                            <span class="skill-tag">Clustering</span>
+                            <span class="skill-tag">Classification</span>
+                            <span class="skill-tag">Regression</span>
+                            <span class="skill-tag">NLP</span>
+                            <span class="skill-tag">Deep Learning</span>
+                            <span class="skill-tag">Data Visualization</span>
+                            <span class="skill-tag">Feature Engineering</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">My Services</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card glass-effect">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Data Analysis</h3>
+                        <p>Transform raw data into actionable insights with advanced analytics and visualization techniques.</p>
+                    </div>
+                    <div class="service-card glass-effect">
+                        <div class="service-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Machine Learning</h3>
+                        <p>Build predictive models and AI solutions to solve complex business problems.</p>
+                    </div>
+                    <div class="service-card glass-effect">
+                        <div class="service-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Data Engineering</h3>
+                        <p>Design and implement robust data pipelines for efficient data processing and storage.</p>
+                    </div>
+                    <div class="service-card glass-effect">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Business Intelligence</h3>
+                        <p>Create interactive dashboards and reports for data-driven decision making.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Work Experience</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item glass-effect">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>Data Science & Data Analysis Training Program</h3>
+                            <h4>Sure Trust | Jan 2024 - May 2024</h4>
+                            <ul class="experience-list">
+                                <li>Completed hands-on training in data analytics, visualization, and predictive modelling.</li>
+                                <li>Developed interactive dashboards using Tableau.</li>
+                                <li>Gained practical experience in data cleaning & transformation.</li>
+                            </ul>
+                            <a href="https://drive.google.com/file/d/1AtAZ6drofhWPEZpMbqu9_7qMEZ76isES/view?usp=sharing" target="_blank" class="btn small">View Certificate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card glass-effect">
+                        <div class="project-visual">
+                            <div class="project-placeholder">
+                                <i class="fas fa-hospital"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Hospital Management System</h3>
+                            <p>Developed a basic hospital system using Python with CRUD and automation features.</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">OOP</span>
+                            </div>
+                            <a href="https://github.com/sure-trust/Sameer-G9_DS/blob/main/Mini%20Projects/Hospital_Management_System.ipynb" target="_blank" class="btn small">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-card glass-effect">
+                        <div class="project-visual">
+                            <div class="project-placeholder">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Customer Segmentation for E-commerce</h3>
+                            <p>Applied K-means clustering to identify customer types & improve marketing.</p>
+                            <div class="project-tags">
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">Clustering</span>
+                                <span class="tag">Python</span>
+                            </div>
+                            <a href="https://github.com/sure-trust/Sameer-G9_DS/blob/main/Final%20Capstone%20Project/Customer_Segmentation_Project.ipynb" target="_blank" class="btn small">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-card glass-effect">
+                        <div class="project-visual">
+                            <div class="project-placeholder">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Predictive Maintenance System</h3>
+                            <p>Built a machine learning model to predict equipment failures before they occur.</p>
+                            <div class="project-tags">
+                                <span class="tag">ML</span>
+                                <span class="tag">Time Series</span>
+                                <span class="tag">Python</span>
+                            </div>
+                            <a href="#" class="btn small">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-card glass-effect">
+                        <div class="project-visual">
+                            <div class="project-placeholder">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Sentiment Analysis Dashboard</h3>
+                            <p>Created an interactive dashboard for analyzing customer sentiment from social media.</p>
+                            <div class="project-tags">
+                                <span class="tag">NLP</span>
+                                <span class="tag">Dashboard</span>
+                                <span class="tag">Python</span>
+                            </div>
+                            <a href="#" class="btn small">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Client Testimonials</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="testimonials-container">
+                    <div class="testimonial-card glass-effect">
+                        <div class="testimonial-content">
+                            <p>"Sameer's data analysis work transformed our approach to customer insights. His machine learning models helped us increase customer retention by 25%."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Alex Johnson</h4>
+                                <p>CTO, TechSolutions Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card glass-effect">
+                        <div class="testimonial-content">
+                            <p>"Working with Sameer was a game-changer for our business. His predictive models accurately forecasted market trends, saving us thousands in inventory costs."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Williams</h4>
+                                <p>Product Manager, DataDriven Co.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Latest Articles</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="blog-grid">
+                    <div class="blog-card glass-effect">
+                        <div class="blog-visual">
+                            <div class="blog-placeholder">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> June 15, 2024</span>
+                                <span><i class="far fa-clock"></i> 5 min read</span>
+                            </div>
+                            <h3>Machine Learning in Healthcare</h3>
+                            <p>Exploring how ML is revolutionizing patient care and medical research.</p>
+                            <a href="#" class="btn small">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card glass-effect">
+                        <div class="blog-visual">
+                            <div class="blog-placeholder">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span><i class="far fa-calendar"></i> May 28, 2024</span>
+                                <span><i class="far fa-clock"></i> 8 min read</span>
+                            </div>
+                            <h3>Building Scalable Data Pipelines</h3>
+                            <p>Best practices for designing robust and efficient data processing systems.</p>
+                            <a href="#" class="btn small">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="content-wrapper">
+                    <div class="contact-info glass-effect">
+                        <h3>Let's Connect</h3>
+                        <p>Have a project in mind or want to discuss potential opportunities? Feel free to reach out!</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h4>Email</h4>
+                                    <span>mohammedsameeralishaik@gmail.com</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-linkedin"></i>
+                                <div>
+                                    <h4>LinkedIn</h4>
+                                    <span>linkedin.com/in/shaik-mohammedsameerali-672a82251</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-github"></i>
+                                <div>
+                                    <h4>GitHub</h4>
+                                    <span>github.com/sure-trust/Sameer-G9_DS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form glass-effect">
+                        <form action="https://formsubmit.co/mohammedsameeralishaik@gmail.com" method="POST">
+                            <input type="hidden" name="_captcha" value="false">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" name="name" placeholder="Your Name" required aria-required="true" aria-label="Your name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="Your Email" required aria-required="true" aria-label="Your email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="subject" placeholder="Subject" required aria-required="true" aria-label="Subject">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Your Message" rows="5" required aria-required="true" aria-label="Your message"></textarea>
+                            </div>
+                            <button type="submit" class="btn primary">Send Message</button>
+                            <div id="form-message" class="form-message" aria-live="polite"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Sameer Ali</h2>
+                    <p>Data Scientist & Python Developer</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/shaik-mohammedsameerali-672a82251/" target="_blank" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/sure-trust/Sameer-G9_DS" target="_blank" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Medium profile"><i class="fab fa-medium"></i></a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Sameer Ali. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
     <script src="lib/three/three.min.js"></script>
     <script src="lib/three/PointerLockControls.js"></script>
     <script src="lib/three/Sky.js"></script>
-  </head>
-  <body>
-    <div id="loading-screen">
-        <div id="loading-text">Loading...</div>
-        <div id="progress-bar-container">
-            <div id="progress-bar"></div>
-        </div>
-    </div>
-    <canvas id="bg"></canvas>
-    <!-- 🌐 HEADER -->
-    <header class="header">
-      <i class="fas fa-bars" id="menu-icon"></i>
-      <!-- 👈 Mobile icon -->
-      <nav class="navbar">
-        <a href="#home" class="active">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#portfolio">Projects</a>
-        <a href="#certification">Certification</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
-
-    <!-- 🏠 HOME -->
-    <section class="home active-section" id="home">
-      <div class="home-content">
-        <h3>Hello, It's Me</h3>
-        <h1>SHAIK MOHAMMED SAMEER ALI</h1>
-        <h3>And I'm a <span class="multiple-text">Data Analyst</span></h3>
-        <p>
-          Data Analyst with hands-on experience in SQL, Python, and Data
-          Visualization. Passionate about transforming complex datasets into
-          actionable insights.
-        </p>
-        <div class="social-media">
-          <a
-            href="https://www.linkedin.com/in/shaik-mohammedsameerali-672a82251/"
-            target="_blank"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-          <a href="https://github.com/sure-trust/Sameer-G9_DS" target="_blank"
-            ><i class="fab fa-github"></i
-          ></a>
-        </div>
-        <a
-          href="https://docs.google.com/document/d/1LB9uSAcdDstgJWPxN1rUc18CNW2zWacH/edit?usp=sharing"
-          class="btn"
-          target="_blank"
-          >Download CV</a
-        >
-      </div>
-      <div class="home-img">
-        <img src="IMG-20230130-WA0011.png" alt="Sameer Profile" />
-      </div>
-    </section>
-
-    <!-- 💻 SKILLS -->
-    <section class="skills" id="skills">
-      <h2 class="heading">My <span>Skills</span></h2>
-      <div class="skills-container">
-        <div class="skills-box">
-          <i class="fas fa-code"></i>
-          <h3>Programming</h3>
-          <p>Python, SQL, Java, C</p>
-        </div>
-        <div class="skills-box">
-          <i class="fas fa-chart-bar"></i>
-          <h3>Data Science Tools</h3>
-          <p>NumPy, Pandas, Scikit-learn, Power BI, Tableau</p>
-        </div>
-        <div class="skills-box">
-          <i class="fas fa-brain"></i>
-          <h3>Techniques</h3>
-          <p>Predictive Modelling, K-Means Clustering, Model Evaluation</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 🧠 EXPERIENCE -->
-    <section class="experience" id="experience">
-      <h2 class="heading">Work <span>Experience</span></h2>
-      <div class="experience-container">
-        <div class="experience-box">
-          <h3>Data Science & Data Analysis Training Program</h3>
-          <h4>Sure Trust | Jan 2024 - May 2024</h4>
-          <ul>
-            <li>
-              Completed hands-on training in data analytics, visualization, and
-              predictive modelling.
-            </li>
-            <li>Developed interactive dashboards using Tableau.</li>
-            <li>
-              Gained practical experience in data cleaning & transformation.
-            </li>
-          </ul>
-          <a
-            href="https://drive.google.com/file/d/1AtAZ6drofhWPEZpMbqu9_7qMEZ76isES/view?usp=sharing"
-            target="_blank"
-            class="btn"
-            >View Certificate</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- 📦 PORTFOLIO -->
-    <section class="portfolio" id="portfolio">
-      <h2 class="heading">Latest <span>Project</span></h2>
-      <div class="portfolio-container">
-        <div class="portfolio-box">
-          <img src="generate image of 3d.png" alt="Project 1" />
-          <div class="portfolio-content">
-            <h4>Hospital Management System (Mini Project)</h4>
-            <p>
-              Developed a basic hospital system using Python with CRUD and
-              automation.
-            </p>
-            <a
-              href="https://github.com/sure-trust/Sameer-G9_DS/blob/main/Mini%20Projects/Hospital_Management_System.ipynb"
-              target="_blank"
-              class="btn"
-              >View Project</a
-            >
-          </div>
-        </div>
-
-        <div class="portfolio-box">
-          <img src="different design sty.png" alt="Project 2" />
-          <div class="portfolio-content">
-            <h4>Customer Segmentation for E-commerce</h4>
-            <p>
-              Applied K-means clustering to identify customer types & improve
-              marketing.
-            </p>
-            <a
-              href="https://github.com/sure-trust/Sameer-G9_DS/blob/main/Final%20Capstone%20Project/Customer_Segmentation_Project.ipynb"
-              target="_blank"
-              class="btn"
-              >View Project</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 🎓 CERTIFICATION -->
-    <section class="certification" id="certification">
-      <h2 class="heading">My <span>Certifications</span></h2>
-      <div class="certification-container">
-        <div class="portfolio-box">
-          <img
-            src="sure.png"
-            alt="Data Science Certificate"
-          />
-          <div class="portfolio-content">
-            <h4>Data Science & Data Analysis</h4>
-            <p>Issued by AICTE</p>
-            <a
-              href="https://drive.google.com/file/d/1AtAZ6drofhWPEZpMbqu9_7qMEZ76isES/view?usp=sharing"
-              class="btn"
-              target="_blank"
-              >View Certificate</a
-            >
-          </div>
-        </div>
-
-        <div class="portfolio-box">
-          <img
-            src="apsche.png"
-            alt="AI ML Certificate"
-          />
-          <div class="portfolio-content">
-            <h4>Artificial Intelligence & Machine Learning</h4>
-            <p>Issued by APSCHE</p>
-            <a
-              href="https://drive.google.com/file/d/1p9pXhl_eSbNclhVE_UagXtXnsGD2ZKfg/view"
-              class="btn"
-              target="_blank"
-              >View Certificate</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 📬 CONTACT -->
-    <section class="contact" id="contact">
-      <h2 class="heading">Contact <span>Me!</span></h2>
-      <form
-        action="https://formsubmit.co/mohammedsameeralishaik@gmail.com"
-        method="POST"
-      >
-        <!-- 🛡️ Optional hidden fields -->
-        <input type="hidden" name="_captcha" value="false" />
-
-        <div class="input-box">
-          <input type="text" name="name" placeholder="Full Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-        </div>
-        <div class="input-box">
-          <input
-            type="text"
-            name="subject"
-            placeholder="Email Subject"
-            required
-          />
-        </div>
-        <textarea
-          name="message"
-          cols="30"
-          rows="10"
-          placeholder="Your Message"
-          required
-        ></textarea>
-        <input type="submit" value="Send Message" class="btn" />
-      </form>
-    </section>
-
-    <!-- 🔚 FOOTER -->
-    <footer class="footer">
-      <div class="footer-text">
-        <p>Copyright &copy; 2025 by Sameer | All Rights Reserved.</p>
-      </div>
-      <div class="footer-iconTop">
-        <a href="#home"><i class="fas fa-arrow-up"></i></a>
-      </div>
-    </footer>
-
-    <!-- 📜 SCRIPTS -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="script.js"></script>
     <script src="scene.js"></script>
-  </body>
+    <script src="app.js"></script>
+</body>
 </html>

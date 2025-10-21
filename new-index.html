@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sameer Ali - Terminal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Matrix Rain Background -->
+    <canvas id="matrix-bg" class="matrix-canvas"></canvas>
+
+    <!-- 3D Canvas -->
+    <canvas id="bg"></canvas>
+
+    <!-- Terminal Window -->
+    <div class="terminal-window">
+        <!-- Terminal Header -->
+        <div class="terminal-header">
+            <div class="terminal-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+            </div>
+            <div class="terminal-title">sameer@portfolio: ~</div>
+        </div>
+
+        <!-- Terminal Content -->
+        <div class="terminal-content">
+            <!-- Boot Sequence -->
+            <div class="boot-sequence">
+                <div class="boot-line">Initializing Sameer Ali's Portfolio...</div>
+                <div class="boot-line delay-1">Loading neural networks...</div>
+                <div class="boot-line delay-2">Connecting to data streams...</div>
+                <div class="boot-line delay-3">System ready.</div>
+            </div>
+
+            <!-- Command Prompt -->
+            <div class="command-prompt">
+                <span class="prompt">sameer@portfolio:~$</span>
+                <span class="typed-text" id="hero-text">whoami</span>
+                <span class="cursor">|</span>
+            </div>
+
+            <!-- Hero Output -->
+            <div class="terminal-output" id="hero-output">
+                <div class="output-line">
+                    <span class="output-prefix">Name:</span>
+                    <span class="output-value">Sameer Ali</span>
+                </div>
+                <div class="output-line">
+                    <span class="output-prefix">Role:</span>
+                    <span class="output-value">Data Scientist & Python Developer</span>
+                </div>
+                <div class="output-line">
+                    <span class="output-prefix">Status:</span>
+                    <span class="output-value typing">Transforming data into intelligence...</span>
+                </div>
+                <div class="output-line">
+                    <span class="output-prefix">Location:</span>
+                    <span class="output-value">Digital Space</span>
+                </div>
+            </div>
+
+            <!-- Navigation Commands -->
+            <div class="nav-commands">
+                <div class="command-option" data-section="about">
+                    <span class="cmd-number">1.</span>
+                    <span class="cmd-text">cat about.txt</span>
+                    <span class="cmd-desc">Read about me</span>
+                </div>
+                <div class="command-option" data-section="skills">
+                    <span class="cmd-number">2.</span>
+                    <span class="cmd-text">ls skills/</span>
+                    <span class="cmd-desc">View technical skills</span>
+                </div>
+                <div class="command-option" data-section="projects">
+                    <span class="cmd-number">3.</span>
+                    <span class="cmd-text">cd projects && ls -la</span>
+                    <span class="cmd-desc">Explore my work</span>
+                </div>
+                <div class="command-option" data-section="contact">
+                    <span class="cmd-number">4.</span>
+                    <span class="cmd-text">ping contact</span>
+                    <span class="cmd-desc">Get in touch</span>
+                </div>
+            </div>
+
+            <!-- Dynamic Content Area -->
+            <div class="dynamic-content" id="dynamic-content">
+                <!-- About Section -->
+                <div class="content-section" id="about-section">
+                    <div class="section-header">
+                        <span class="file-path">~/about.txt</span>
+                        <span class="file-info">Last modified: Today</span>
+                    </div>
+                    <div class="file-content">
+                        <pre>
+<span class="comment"># About Sameer Ali</span>
+
+<span class="keyword">class</span> <span class="class-name">DataScientist</span>:
+    <span class="keyword">def</span> <span class="function">__init__</span>(self):
+        self.name = <span class="string">"Sameer Ali"</span>
+        self.role = <span class="string">"Data Scientist & Developer"</span>
+        self.experience = <span class="number">5</span>  <span class="comment"># years</span>
+        self.projects = <span class="number">50</span><span class="operator">+</span>
+        self.certifications = <span class="number">20</span><span class="operator">+</span>
+
+    <span class="keyword">def</span> <span class="function">transform_data</span>(self, raw_data):
+        <span class="comment">"""Transform raw data into actionable insights"""</span>
+        insights = self.analyze(raw_data)
+        solutions = self.build_models(insights)
+        <span class="keyword">return</span> solutions
+
+<span class="comment"># Key Skills</span>
+<span class="variable">skills</span> = {
+    <span class="string">'programming'</span>: [<span class="string">'Python'</span>, <span class="string">'SQL'</span>, <span class="string">'Java'</span>],
+    <span class="string">'ml_ai'</span>: [<span class="string">'TensorFlow'</span>, <span class="string">'PyTorch'</span>, <span class="string">'Scikit-learn'</span>],
+    <span class="string">'data_viz'</span>: [<span class="string">'Tableau'</span>, <span class="string">'Power BI'</span>, <span class="string">'Plotly'</span>],
+    <span class="string">'tools'</span>: [<span class="string">'Pandas'</span>, <span class="string">'NumPy'</span>, <span class="string">'Git'</span>]
+}
+                        </pre>
+                    </div>
+                </div>
+
+                <!-- Skills Section -->
+                <div class="content-section" id="skills-section">
+                    <div class="section-header">
+                        <span class="file-path">~/skills/</span>
+                        <span class="file-info">Directory listing</span>
+                    </div>
+                    <div class="file-content">
+                        <div class="directory-listing">
+                            <div class="dir-item">
+                                <span class="file-icon">📊</span>
+                                <span class="file-name">python/</span>
+                                <span class="file-size">95%</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="dir-item">
+                                <span class="file-icon">🗄️</span>
+                                <span class="file-name">sql/</span>
+                                <span class="file-size">90%</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="dir-item">
+                                <span class="file-icon">🤖</span>
+                                <span class="file-name">machine_learning/</span>
+                                <span class="file-size">85%</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="dir-item">
+                                <span class="file-icon">📈</span>
+                                <span class="file-name">data_visualization/</span>
+                                <span class="file-size">80%</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Section -->
+                <div class="content-section" id="projects-section">
+                    <div class="section-header">
+                        <span class="file-path">~/projects/</span>
+                        <span class="file-info">Project repository</span>
+                    </div>
+                    <div class="file-content">
+                        <div class="project-files">
+                            <div class="project-file">
+                                <div class="file-header">
+                                    <span class="file-icon">🏥</span>
+                                    <span class="file-name">hospital_management.py</span>
+                                    <span class="file-date">2024-01-15</span>
+                                </div>
+                                <div class="file-description">
+                                    CRUD application for hospital management with automation features
+                                </div>
+                                <div class="file-tags">
+                                    <span class="tag">Python</span>
+                                    <span class="tag">OOP</span>
+                                    <span class="tag">Database</span>
+                                </div>
+                            </div>
+                            <div class="project-file">
+                                <div class="file-header">
+                                    <span class="file-icon">🛒</span>
+                                    <span class="file-name">customer_segmentation.ipynb</span>
+                                    <span class="file-date">2024-02-20</span>
+                                </div>
+                                <div class="file-description">
+                                    K-means clustering analysis for e-commerce customer segmentation
+                                </div>
+                                <div class="file-tags">
+                                    <span class="tag">ML</span>
+                                    <span class="tag">Clustering</span>
+                                    <span class="tag">Python</span>
+                                </div>
+                            </div>
+                            <div class="project-file">
+                                <div class="file-header">
+                                    <span class="file-icon">⚙️</span>
+                                    <span class="file-name">predictive_maintenance/</span>
+                                    <span class="file-date">2024-03-10</span>
+                                </div>
+                                <div class="file-description">
+                                    Time series forecasting model for equipment failure prediction
+                                </div>
+                                <div class="file-tags">
+                                    <span class="tag">AI</span>
+                                    <span class="tag">Time Series</span>
+                                    <span class="tag">Deep Learning</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="content-section" id="contact-section">
+                    <div class="section-header">
+                        <span class="file-path">~/contact</span>
+                        <span class="file-info">Connection established</span>
+                    </div>
+                    <div class="file-content">
+                        <div class="contact-terminal">
+                            <div class="contact-line">
+                                <span class="contact-label">Email:</span>
+                                <a href="mailto:mohammedsameeralishaik@gmail.com" class="contact-value">mohammedsameeralishaik@gmail.com</a>
+                            </div>
+                            <div class="contact-line">
+                                <span class="contact-label">LinkedIn:</span>
+                                <a href="https://linkedin.com/in/shaik-mohammedsameerali-672a82251" class="contact-value" target="_blank">linkedin.com/in/shaik-mohammedsameerali-672a82251</a>
+                            </div>
+                            <div class="contact-line">
+                                <span class="contact-label">GitHub:</span>
+                                <a href="https://github.com/sure-trust/Sameer-G9_DS" class="contact-value" target="_blank">github.com/sure-trust/Sameer-G9_DS</a>
+                            </div>
+                            <div class="contact-line">
+                                <span class="contact-label">Status:</span>
+                                <span class="contact-value status">Available for collaboration</span>
+                            </div>
+                        </div>
+                        <div class="contact-form-terminal">
+                            <div class="form-prompt">send_message --to=sameer</div>
+                            <form class="terminal-form">
+                                <div class="form-input">
+                                    <span class="form-label">--name:</span>
+                                    <input type="text" name="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-input">
+                                    <span class="form-label">--email:</span>
+                                    <input type="email" name="email" placeholder="your.email@example.com" required>
+                                </div>
+                                <div class="form-input">
+                                    <span class="form-label">--subject:</span>
+                                    <input type="text" name="subject" placeholder="Message Subject" required>
+                                </div>
+                                <div class="form-input">
+                                    <span class="form-label">--message:</span>
+                                    <textarea name="message" placeholder="Your message here..." rows="3" required></textarea>
+                                </div>
+                                <button type="submit" class="terminal-btn">execute</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Command Input -->
+            <div class="command-input">
+                <span class="prompt">sameer@portfolio:~$</span>
+                <input type="text" id="terminal-input" placeholder="Type 'help' for commands..." autocomplete="off">
+                <span class="cursor">|</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="lib/three/three.min.js"></script>
+    <script src="lib/three/PointerLockControls.js"></script>
+    <script src="lib/three/Sky.js"></script>
+    <script src="scene.js"></script>
+    <script src="terminal.js"></script>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sameer Ali - Space Explorer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Starfield Background -->
+    <canvas id="starfield" class="starfield-canvas"></canvas>
+
+    <!-- Space Station Interface -->
+    <div class="space-station">
+        <!-- Mission Control Header -->
+        <div class="mission-header">
+            <div class="mission-status">
+                <div class="status-indicator active"></div>
+                <span>MISSION STATUS: ACTIVE</span>
+            </div>
+            <div class="astronaut-avatar">
+                <div class="helmet">
+                    <div class="visor">
+                        <div class="reflection"></div>
+                    </div>
+                </div>
+                <div class="spacesuit"></div>
+            </div>
+            <div class="mission-timer">
+                <i class="fas fa-clock"></i>
+                <span id="mission-time">00:00:00</span>
+            </div>
+        </div>
+
+        <!-- Navigation Planets -->
+        <div class="planet-navigation">
+            <div class="planet" data-section="about" id="earth-planet">
+                <div class="planet-sphere">
+                    <div class="planet-surface">
+                        <div class="continent"></div>
+                        <div class="continent small"></div>
+                        <div class="ocean"></div>
+                    </div>
+                    <div class="planet-atmosphere"></div>
+                </div>
+                <div class="planet-label">ABOUT</div>
+                <div class="planet-tooltip">Explore my background</div>
+            </div>
+
+            <div class="planet" data-section="skills" id="tech-planet">
+                <div class="planet-sphere">
+                    <div class="planet-surface tech">
+                        <div class="circuit-pattern"></div>
+                        <div class="data-streams"></div>
+                    </div>
+                    <div class="planet-atmosphere electric"></div>
+                </div>
+                <div class="planet-label">SKILLS</div>
+                <div class="planet-tooltip">Technical expertise</div>
+            </div>
+
+            <div class="planet" data-section="projects" id="rocket-planet">
+                <div class="planet-sphere">
+                    <div class="planet-surface industrial">
+                        <div class="factory"></div>
+                        <div class="smoke-stack"></div>
+                    </div>
+                    <div class="planet-atmosphere industrial"></div>
+                </div>
+                <div class="planet-label">PROJECTS</div>
+                <div class="planet-tooltip">Mission accomplishments</div>
+            </div>
+
+            <div class="planet" data-section="contact" id="comms-planet">
+                <div class="planet-sphere">
+                    <div class="planet-surface comms">
+                        <div class="satellite-dish"></div>
+                        <div class="signal-waves"></div>
+                    </div>
+                    <div class="planet-atmosphere signal"></div>
+                </div>
+                <div class="planet-label">CONTACT</div>
+                <div class="planet-tooltip">Open communication channel</div>
+            </div>
+        </div>
+
+        <!-- Mission Display -->
+        <div class="mission-display">
+            <div class="display-screen">
+                <!-- Welcome Screen -->
+                <div class="screen-content active" id="welcome-screen">
+                    <div class="welcome-message">
+                        <h1 class="mission-title">DATA SCIENTIST MISSION</h1>
+                        <div class="mission-objective">
+                            <div class="objective-line">OBJECTIVE: Transform data into intelligence</div>
+                            <div class="objective-line">LOCATION: Digital Space Station</div>
+                            <div class="objective-line">COMMANDER: Sameer Ali</div>
+                        </div>
+                        <div class="mission-stats">
+                            <div class="stat">
+                                <span class="stat-value">50+</span>
+                                <span class="stat-label">Projects Completed</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">5+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">20+</span>
+                                <span class="stat-label">Certifications</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Screen -->
+                <div class="screen-content" id="about-screen">
+                    <div class="screen-header">
+                        <h2>ABOUT MISSION</h2>
+                        <div class="screen-divider"></div>
+                    </div>
+                    <div class="screen-body">
+                        <div class="astronaut-profile">
+                            <div class="profile-image">
+                                <div class="space-helmet">
+                                    <div class="helmet-glass">
+                                        <div class="reflection-pattern"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="profile-info">
+                                <h3>Data Science Astronaut</h3>
+                                <p>Specializing in machine learning, data analysis, and AI-driven solutions. Experienced in Python, SQL, and advanced analytics tools.</p>
+                                <div class="specializations">
+                                    <span class="spec-tag">Machine Learning</span>
+                                    <span class="spec-tag">Data Engineering</span>
+                                    <span class="spec-tag">AI Research</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Screen -->
+                <div class="screen-content" id="skills-screen">
+                    <div class="screen-header">
+                        <h2>SKILLS INVENTORY</h2>
+                        <div class="screen-divider"></div>
+                    </div>
+                    <div class="screen-body">
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4>Programming Languages</h4>
+                                <div class="skill-items">
+                                    <div class="skill-item">
+                                        <span class="skill-name">Python</span>
+                                        <div class="skill-meter">
+                                            <div class="skill-fill" style="width: 95%"></div>
+                                        </div>
+                                        <span class="skill-percent">95%</span>
+                                    </div>
+                                    <div class="skill-item">
+                                        <span class="skill-name">SQL</span>
+                                        <div class="skill-meter">
+                                            <div class="skill-fill" style="width: 90%"></div>
+                                        </div>
+                                        <span class="skill-percent">90%</span>
+                                    </div>
+                                    <div class="skill-item">
+                                        <span class="skill-name">Java</span>
+                                        <div class="skill-meter">
+                                            <div class="skill-fill" style="width: 75%"></div>
+                                        </div>
+                                        <span class="skill-percent">75%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>AI & Machine Learning</h4>
+                                <div class="skill-cloud">
+                                    <span class="skill-badge">TensorFlow</span>
+                                    <span class="skill-badge">PyTorch</span>
+                                    <span class="skill-badge">Scikit-learn</span>
+                                    <span class="skill-badge">Neural Networks</span>
+                                    <span class="skill-badge">Deep Learning</span>
+                                    <span class="skill-badge">Computer Vision</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Screen -->
+                <div class="screen-content" id="projects-screen">
+                    <div class="screen-header">
+                        <h2>MISSION LOG</h2>
+                        <div class="screen-divider"></div>
+                    </div>
+                    <div class="screen-body">
+                        <div class="projects-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Hospital Management System</h4>
+                                    <p>Developed comprehensive CRUD application with automation features using Python OOP principles.</p>
+                                    <div class="project-tech">
+                                        <span class="tech-tag">Python</span>
+                                        <span class="tech-tag">OOP</span>
+                                        <span class="tech-tag">Database</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-satellite"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Customer Segmentation Analysis</h4>
+                                    <p>Applied K-means clustering algorithms to segment e-commerce customers and improve marketing strategies.</p>
+                                    <div class="project-tech">
+                                        <span class="tech-tag">ML</span>
+                                        <span class="tech-tag">Clustering</span>
+                                        <span class="tech-tag">Python</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <h4>Predictive Maintenance System</h4>
+                                    <p>Built time series forecasting model using deep learning to predict equipment failures before they occur.</p>
+                                    <div class="project-tech">
+                                        <span class="tech-tag">AI</span>
+                                        <span class="tech-tag">Time Series</span>
+                                        <span class="tech-tag">Deep Learning</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Screen -->
+                <div class="screen-content" id="contact-screen">
+                    <div class="screen-header">
+                        <h2>COMMUNICATION ARRAY</h2>
+                        <div class="screen-divider"></div>
+                    </div>
+                    <div class="screen-body">
+                        <div class="communication-panel">
+                            <div class="comms-channel">
+                                <div class="channel-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="channel-info">
+                                    <h4>Email Transmission</h4>
+                                    <a href="mailto:mohammedsameeralishaik@gmail.com">mohammedsameeralishaik@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="comms-channel">
+                                <div class="channel-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div class="channel-info">
+                                    <h4>LinkedIn Network</h4>
+                                    <a href="https://linkedin.com/in/shaik-mohammedsameerali-672a82251" target="_blank">linkedin.com/in/shaik-mohammedsameerali-672a82251</a>
+                                </div>
+                            </div>
+                            <div class="comms-channel">
+                                <div class="channel-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div class="channel-info">
+                                    <h4>GitHub Repository</h4>
+                                    <a href="https://github.com/sure-trust/Sameer-G9_DS" target="_blank">github.com/sure-trust/Sameer-G9_DS</a>
+                                </div>
+                            </div>
+                            <div class="transmission-form">
+                                <h4>Send Transmission</h4>
+                                <form class="space-form">
+                                    <div class="form-input">
+                                        <label>Commander Name:</label>
+                                        <input type="text" name="name" placeholder="Your Name" required>
+                                    </div>
+                                    <div class="form-input">
+                                        <label>Communication Frequency:</label>
+                                        <input type="email" name="email" placeholder="your.email@domain.com" required>
+                                    </div>
+                                    <div class="form-input">
+                                        <label>Mission Objective:</label>
+                                        <input type="text" name="subject" placeholder="Subject" required>
+                                    </div>
+                                    <div class="form-input">
+                                        <label>Transmission Message:</label>
+                                        <textarea name="message" placeholder="Your message..." rows="4" required></textarea>
+                                    </div>
+                                    <button type="submit" class="transmission-btn">
+                                        <i class="fas fa-satellite"></i>
+                                        Send Transmission
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <div class="panel-section">
+                <h4>Navigation</h4>
+                <div class="control-buttons">
+                    <button class="control-btn" data-section="about">
+                        <i class="fas fa-globe"></i>
+                        About
+                    </button>
+                    <button class="control-btn" data-section="skills">
+                        <i class="fas fa-cogs"></i>
+                        Skills
+                    </button>
+                    <button class="control-btn" data-section="projects">
+                        <i class="fas fa-rocket"></i>
+                        Projects
+                    </button>
+                    <button class="control-btn" data-section="contact">
+                        <i class="fas fa-satellite"></i>
+                        Contact
+                    </button>
+                </div>
+            </div>
+            <div class="panel-section">
+                <h4>Systems Status</h4>
+                <div class="system-status">
+                    <div class="status-item">
+                        <span class="status-label">AI Core:</span>
+                        <span class="status-value online">ONLINE</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Data Banks:</span>
+                        <span class="status-value online">ONLINE</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Communication:</span>
+                        <span class="status-value online">ONLINE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Space Debris -->
+    <div class="space-debris">
+        <div class="debris asteroid"></div>
+        <div class="debris satellite"></div>
+        <div class="debris meteor"></div>
+    </div>
+
+    <!-- 3D Canvas Background -->
+    <canvas id="bg"></canvas>
+
+    <!-- Scripts -->
+    <script src="lib/three/three.min.js"></script>
+    <script src="lib/three/PointerLockControls.js"></script>
+    <script src="lib/three/Sky.js"></script>
+    <script src="scene.js"></script>
+    <script src="space.js"></script>
+</body>
+</html>
